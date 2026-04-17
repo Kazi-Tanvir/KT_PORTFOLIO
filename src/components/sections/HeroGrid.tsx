@@ -25,8 +25,9 @@ export const HeroGrid: React.FC<HeroGridProps> = ({ skills }) => {
             Full Stack <br /> Dev.
           </h1>
           <p className="bg-black text-white inline-block px-3 md:px-4 py-1.5 md:py-2 text-base md:text-xl font-bold mb-6 md:mb-10 self-start">
-            Computer Science @ BUET
+            IIT @ DU
           </p>
+          <br />
           <Button size="md" className="w-fit md:px-12 md:py-5 md:text-2xl">
             Let's Talk →
           </Button>

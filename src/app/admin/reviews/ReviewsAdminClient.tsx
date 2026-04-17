@@ -41,13 +41,13 @@ export default function ReviewsAdminClient({ reviews }: ReviewsAdminClientProps)
   return (
     <div className="py-12 space-y-12">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[8px] border-black pb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 border-b-[4px] md:border-b-[8px] border-black pb-6 md:pb-8">
         <div className="space-y-2">
           <Link href="/admin" className="inline-flex items-center gap-2 font-headline font-black uppercase text-sm tracking-widest text-on-surface-variant hover:text-hero-bg transition-colors mb-2">
             <ArrowLeft size={16} /> Back to Dashboard
           </Link>
-          <h1 className="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter">
-            <Star className="inline mr-4" size={48} />Reviews
+          <h1 className="font-headline text-2xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter">
+            <Star className="inline mr-2 md:mr-4 md:hidden" size={24} /><Star className="hidden md:inline mr-4" size={48} />Reviews
           </h1>
           <p className="font-body text-xl font-bold text-on-surface-variant">
             Testimonials: {reviews.length}
@@ -55,7 +55,7 @@ export default function ReviewsAdminClient({ reviews }: ReviewsAdminClientProps)
         </div>
         <Button
           variant="primary"
-          className="flex items-center gap-2 text-xl"
+          className="flex items-center gap-2 text-sm md:text-xl"
           onClick={() => { setShowAddForm(!showAddForm); setEditingId(null); }}
         >
           {showAddForm ? <><X size={20} /> CANCEL</> : <><Plus size={20} /> ADD_REVIEW</>}
@@ -64,8 +64,8 @@ export default function ReviewsAdminClient({ reviews }: ReviewsAdminClientProps)
 
       {/* Add Form */}
       {showAddForm && (
-        <Card className="p-8" bg="bg-milestone-bg">
-          <h2 className="font-headline text-2xl font-black uppercase mb-6">New Review</h2>
+        <Card className="p-5 md:p-8" bg="bg-milestone-bg">
+          <h2 className="font-headline text-xl md:text-2xl font-black uppercase mb-4 md:mb-6">New Review</h2>
           <form action={handleCreate} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="font-headline uppercase font-black text-sm tracking-widest">Name</label>
@@ -107,10 +107,10 @@ export default function ReviewsAdminClient({ reviews }: ReviewsAdminClientProps)
             <Card key={review.id} className="p-0 overflow-hidden" bg="bg-white">
               {editingId === review.id ? (
                 /* Edit Mode */
-                <form action={handleUpdate} className="p-8 space-y-6 bg-milestone-bg/30">
+                <form action={handleUpdate} className="p-5 md:p-8 space-y-4 md:space-y-6 bg-milestone-bg/30">
                   <input type="hidden" name="id" value={review.id} />
                   <div className="flex justify-between items-center">
-                    <h3 className="font-headline text-2xl font-black uppercase">Editing: {review.name}</h3>
+                    <h3 className="font-headline text-xl md:text-2xl font-black uppercase">Editing: {review.name}</h3>
                     <Button type="button" variant="outline" className="p-2" onClick={() => setEditingId(null)}>
                       <X size={20} />
                     </Button>
@@ -145,7 +145,7 @@ export default function ReviewsAdminClient({ reviews }: ReviewsAdminClientProps)
                 </form>
               ) : (
                 /* View Mode */
-                <div className="p-8 flex flex-col md:flex-row justify-between gap-6">
+                <div className="p-5 md:p-8 flex flex-col md:flex-row justify-between gap-4 md:gap-6">
                   <div className="flex gap-6 flex-1">
                     {/* Avatar */}
                     {review.avatar && (

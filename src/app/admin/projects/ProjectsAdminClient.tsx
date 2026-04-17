@@ -41,13 +41,13 @@ export default function ProjectsAdminClient({ projects }: ProjectsAdminClientPro
   return (
     <div className="py-12 space-y-12">
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b-[8px] border-black pb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-6 border-b-[4px] md:border-b-[8px] border-black pb-6 md:pb-8">
         <div className="space-y-2">
           <Link href="/admin" className="inline-flex items-center gap-2 font-headline font-black uppercase text-sm tracking-widest text-on-surface-variant hover:text-hero-bg transition-colors mb-2">
             <ArrowLeft size={16} /> Back to Dashboard
           </Link>
-          <h1 className="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter">
-            <FolderOpen className="inline mr-4" size={48} />Projects
+          <h1 className="font-headline text-2xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter">
+            <FolderOpen className="inline mr-2 md:mr-4 md:hidden" size={24} /><FolderOpen className="hidden md:inline mr-4" size={48} />Projects
           </h1>
           <p className="font-body text-xl font-bold text-on-surface-variant">
             Total Deployments: {projects.length}
@@ -55,7 +55,7 @@ export default function ProjectsAdminClient({ projects }: ProjectsAdminClientPro
         </div>
         <Button
           variant="primary"
-          className="flex items-center gap-2 text-xl"
+          className="flex items-center gap-2 text-sm md:text-xl"
           onClick={() => { setShowAddForm(!showAddForm); setEditingId(null); }}
         >
           {showAddForm ? <><X size={20} /> CANCEL</> : <><Plus size={20} /> ADD_NEW</>}
@@ -64,8 +64,8 @@ export default function ProjectsAdminClient({ projects }: ProjectsAdminClientPro
 
       {/* Add Form */}
       {showAddForm && (
-        <Card className="p-8" bg="bg-primary-container">
-          <h2 className="font-headline text-2xl font-black uppercase mb-6">New Deployment</h2>
+        <Card className="p-5 md:p-8" bg="bg-primary-container">
+          <h2 className="font-headline text-xl md:text-2xl font-black uppercase mb-4 md:mb-6">New Deployment</h2>
           <form action={handleCreate} className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="font-headline uppercase font-black text-sm tracking-widest">Title</label>

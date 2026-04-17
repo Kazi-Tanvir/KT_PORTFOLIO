@@ -30,12 +30,13 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center">
-      <Card className="w-full max-w-md p-8 space-y-8" bg="bg-white">
+      <Card className="w-full max-w-md p-6 md:p-8 space-y-6 md:space-y-8" bg="bg-white">
         <div className="text-center space-y-2">
-          <div className="w-16 h-16 bg-primary-container border-4 border-black mx-auto flex items-center justify-center rotate-3 scale-110 mb-4">
-            <Lock size={32} />
+          <div className="w-12 h-12 md:w-16 md:h-16 bg-primary-container border-3 md:border-4 border-black mx-auto flex items-center justify-center rotate-3 scale-110 mb-4">
+            <Lock size={24} className="md:hidden" />
+            <Lock size={32} className="hidden md:block" />
           </div>
-          <h1 className="font-headline text-4xl font-black uppercase tracking-tighter">Admin_Access</h1>
+          <h1 className="font-headline text-2xl md:text-4xl font-black uppercase tracking-tighter">Admin_Access</h1>
           <p className="font-body font-bold text-on-surface-variant">Enter clearance credentials</p>
         </div>
 
@@ -47,7 +48,7 @@ export default function AdminLoginPage() {
               required
               type="text"
               placeholder="IDENTIFIER"
-              className="w-full bg-white border-4 border-black p-4 font-body font-bold focus:bg-primary/20 transition-colors outline-none"
+              className="w-full bg-white border-3 md:border-4 border-black p-3 md:p-4 font-body font-bold text-sm md:text-base focus:bg-primary/20 transition-colors outline-none"
             />
           </div>
 
@@ -58,19 +59,19 @@ export default function AdminLoginPage() {
               required
               type="password"
               placeholder="SECRET_KEY"
-              className="w-full bg-white border-4 border-black p-4 font-body font-bold focus:bg-primary/20 transition-colors outline-none"
+              className="w-full bg-white border-3 md:border-4 border-black p-3 md:p-4 font-body font-bold text-sm md:text-base focus:bg-primary/20 transition-colors outline-none"
             />
           </div>
 
           {error && (
-            <div className="p-4 bg-red-100 border-4 border-red-500 text-red-700 font-bold font-body">
+            <div className="p-3 md:p-4 bg-red-100 border-3 md:border-4 border-red-500 text-red-700 font-bold font-body text-sm md:text-base">
               {error}
             </div>
           )}
 
-          <Button 
+            <Button 
             type="submit" 
-            className="w-full py-4 text-xl disabled:opacity-50" 
+            className="w-full py-3 md:py-4 text-base md:text-xl disabled:opacity-50" 
             disabled={isLoading}
           >
             {isLoading ? "AUTHORIZING..." : "INITIALIZE_SESSION"}

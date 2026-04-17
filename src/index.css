@@ -24,24 +24,42 @@
 
 @layer base {
   body {
-    @apply bg-background text-on-surface font-body border-[8px] border-black min-h-screen;
+    @apply bg-background text-on-surface font-body border-[4px] md:border-[8px] border-black min-h-screen;
   }
 }
 
 @layer utilities {
   .neo-shadow {
-    box-shadow: 8px 8px 0px 0px #000000;
-  }
-  
-  .neo-shadow-sm {
     box-shadow: 4px 4px 0px 0px #000000;
   }
   
+  .neo-shadow-sm {
+    box-shadow: 3px 3px 0px 0px #000000;
+  }
+  
   .neo-shadow-lg {
-    box-shadow: 10px 10px 0px 0px #000000;
+    box-shadow: 6px 6px 0px 0px #000000;
   }
   
   .text-stroke {
-    text-shadow: 4px 4px 0 #000;
+    text-shadow: 3px 3px 0 #000;
+  }
+
+  @media (min-width: 768px) {
+    .neo-shadow {
+      box-shadow: 8px 8px 0px 0px #000000;
+    }
+    
+    .neo-shadow-sm {
+      box-shadow: 4px 4px 0px 0px #000000;
+    }
+    
+    .neo-shadow-lg {
+      box-shadow: 10px 10px 0px 0px #000000;
+    }
+    
+    .text-stroke {
+      text-shadow: 4px 4px 0 #000;
+    }
   }
 }

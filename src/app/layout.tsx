@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-on-surface font-body border-[8px] border-black min-h-screen">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-3 md:px-6">
           <Navbar />
           <main>{children}</main>
           <Footer />

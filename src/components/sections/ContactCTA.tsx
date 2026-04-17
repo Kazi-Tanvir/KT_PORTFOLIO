@@ -40,11 +40,11 @@ export const ContactCTA: React.FC = () => {
 
   if (isSuccess) {
     return (
-      <section id="contact" className="py-24 max-w-4xl mx-auto">
-        <Card bg="bg-primary-container" className="p-12 text-center space-y-6">
-          <CheckCircle2 size={80} className="mx-auto text-black" />
-          <h2 className="font-headline text-5xl font-black uppercase">Message_Received</h2>
-          <p className="font-body text-xl font-bold">Your payload has been securely stored in the database. I'll get back to you soon.</p>
+      <section id="contact" className="py-12 md:py-24 max-w-4xl mx-auto">
+        <Card bg="bg-primary-container" className="p-6 md:p-12 text-center space-y-4 md:space-y-6">
+          <CheckCircle2 size={60} className="mx-auto text-black" />
+          <h2 className="font-headline text-3xl md:text-5xl font-black uppercase">Message_Received</h2>
+          <p className="font-body text-base md:text-xl font-bold">Your payload has been securely stored in the database. I'll get back to you soon.</p>
           <Button onClick={() => setIsSuccess(false)} variant="secondary">Send Another</Button>
         </Card>
       </section>
@@ -52,18 +52,18 @@ export const ContactCTA: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-24 max-w-4xl mx-auto">
-      <Card bg="bg-primary-container" className="p-12 relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-24 max-w-4xl mx-auto">
+      <Card bg="bg-primary-container" className="p-5 md:p-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-10">
-          <Send size={200} />
+          <Send size={120} className="md:w-[200px] md:h-[200px]" />
         </div>
         
         <div className="relative z-10 space-y-8">
           <div className="text-center space-y-4">
-            <h2 className="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter text-black">
+            <h2 className="font-headline text-3xl md:text-7xl font-black uppercase tracking-tighter text-black">
               Let's Build_
             </h2>
-            <p className="font-body text-xl font-bold text-black max-w-2xl mx-auto">
+            <p className="font-body text-base md:text-xl font-bold text-black max-w-2xl mx-auto">
               Ready to start your next project? Send me a message and let's turn your vision into a high-performance reality.
             </p>
           </div>
@@ -78,7 +78,7 @@ export const ContactCTA: React.FC = () => {
                   placeholder="ENTER NAME"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full bg-white border-4 border-black p-4 font-body font-bold focus:bg-primary transition-colors outline-none"
+                  className="w-full bg-white border-3 md:border-4 border-black p-3 md:p-4 font-body font-bold text-sm md:text-base focus:bg-primary transition-colors outline-none"
                 />
               </div>
               <div className="space-y-2">
@@ -89,7 +89,7 @@ export const ContactCTA: React.FC = () => {
                   placeholder="EMAIL@DOMAIN.COM"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full bg-white border-4 border-black p-4 font-body font-bold focus:bg-primary transition-colors outline-none"
+                  className="w-full bg-white border-3 md:border-4 border-black p-3 md:p-4 font-body font-bold text-sm md:text-base focus:bg-primary transition-colors outline-none"
                 />
               </div>
             </div>
@@ -101,14 +101,14 @@ export const ContactCTA: React.FC = () => {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full bg-white border-4 border-black p-4 font-body font-bold focus:bg-primary transition-colors outline-none resize-none"
+                className="w-full bg-white border-3 md:border-4 border-black p-3 md:p-4 font-body font-bold text-sm md:text-base focus:bg-primary transition-colors outline-none resize-none"
               ></textarea>
             </div>
             <Button 
               type="submit" 
               variant="secondary" 
               size="lg" 
-              className="w-full py-6 text-3xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full py-4 md:py-6 text-xl md:text-3xl disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={isPending}
             >
               {isPending ? 'Transmitting...' : 'Transmit_Message'}

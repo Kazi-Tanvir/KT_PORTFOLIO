@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({
   noShadow = false
 }) => {
   return (
-    <div className={`border-[5px] border-black ${bg} ${noShadow ? '' : 'neo-shadow'} ${className}`}>
+    <div className={`border-[3px] md:border-[5px] border-black ${bg} ${noShadow ? '' : 'neo-shadow'} ${className}`}>
       {children}
     </div>
   );
